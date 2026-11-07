@@ -40,6 +40,8 @@ function app_icon(string $name, string $class = ''): string
         'shield' => '<path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/>',
         'external' => '<path d="M14 3h7v7M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
         'calendar' => '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',
+        'edit' => '<path d="m14 4 6 6-9 9H5v-6l9-9z"/><path d="M5 21h14"/>',
+        'trash' => '<path d="M4 7h16"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>',
     ];
     $content = $paths[$name] ?? ($paths['layout'] ?? '');
     $classAttr = $class !== '' ? ' class="' . h($class) . '"' : '';
