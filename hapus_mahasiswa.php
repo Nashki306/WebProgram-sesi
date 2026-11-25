@@ -16,14 +16,17 @@ if (!$conn) {
     exit;
 }
 
+$ref = $_POST['ref'] ?? ($_GET['ref'] ?? '');
+$target = ($ref === 'crud') ? 'crud_mahasiswa.php' : 'crud_mahasiswa.php';
+
 try {
     $stmt = $conn->prepare('DELETE FROM mahasiswa WHERE id = ?');
     $stmt->bind_param('i', $id);
     $stmt->execute();
     $stmt->close();
-    header('Location: data_mahasiswa.php?deleted=1');
+    header('Location: ' . $target . '?deleted=1');
     exit;
 } catch (Throwable $e) {
-    header('Location: data_mahasiswa.php?error=delete');
+    header('Location: ' . $target . '?error=delete');
     exit;
 }

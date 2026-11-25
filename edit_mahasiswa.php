@@ -61,7 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $updateStmt->bind_param('ssssi', $values['nim'], $values['nama'], $values['program_studi'], $values['email'], $id);
                 $updateStmt->execute();
                 $updateStmt->close();
-                header('Location: data_mahasiswa.php?updated=1');
+                $ref = $_GET['ref'] ?? '';
+                $target = ($ref === 'crud') ? 'crud_mahasiswa.php' : 'crud_mahasiswa.php';
+                header('Location: ' . $target . '?updated=1');
                 exit;
             } catch (Throwable $exception) {
                 $error = 'Data gagal diperbarui. Pastikan struktur tabel sesuai.';

@@ -42,6 +42,10 @@ function app_icon(string $name, string $class = ''): string
         'calendar' => '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',
         'edit' => '<path d="m14 4 6 6-9 9H5v-6l9-9z"/><path d="M5 21h14"/>',
         'trash' => '<path d="M4 7h16"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>',
+        'image' => '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>',
+        'music' => '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+        'file' => '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+        'play' => '<polygon points="5 3 19 12 5 21 5 3"/>',
     ];
     $content = $paths[$name] ?? ($paths['layout'] ?? '');
     $classAttr = $class !== '' ? ' class="' . h($class) . '"' : '';
@@ -57,10 +61,12 @@ function app_topbar(string $title, string $subtitle, string $active = ''): void
 {
     $items = [
         ['key' => 'dashboard', 'label' => 'Dashboard', 'href' => 'dashboard.php'],
-        ['key' => 'biodata', 'label' => 'Biodata Diri', 'href' => 'index.php'],
+        ['key' => 'biodata', 'label' => 'Biodata', 'href' => 'index.php'],
         ['key' => 'layout', 'label' => 'Layout Lab', 'href' => 'layout.php'],
         ['key' => 'mahasiswa', 'label' => 'Data Mahasiswa', 'href' => 'data_mahasiswa.php'],
         ['key' => 'tambah', 'label' => 'Tambah Mahasiswa', 'href' => 'form_mahasiswa.php'],
+        ['key' => 'crud_mahasiswa', 'label' => 'CRUD Mahasiswa', 'href' => 'crud_mahasiswa.php'],
+        ['key' => 'crud_media', 'label' => 'CRUD Media', 'href' => 'crud_media.php'],
     ];
 
     $currentPage = basename($_SERVER['SCRIPT_NAME'] ?? '');
@@ -71,6 +77,10 @@ function app_topbar(string $title, string $subtitle, string $active = ''): void
             'layout.php' => 'layout',
             'data_mahasiswa.php' => 'mahasiswa',
             'form_mahasiswa.php' => 'tambah',
+            'crud_mahasiswa.php' => 'crud_mahasiswa',
+            'crud_media.php' => 'crud_media',
+            'form_media.php' => 'crud_media',
+            'edit_media.php' => 'crud_media',
         ];
         $active = $pageMap[$currentPage] ?? '';
     }

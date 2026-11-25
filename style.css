@@ -2988,3 +2988,145 @@ svg {
     background-color: #fbdfe3;
     color: #c93b58;
 }
+
+/* ===================================================
+   STYLING SESI 10 & CRUD MULTIMEDIA (IMAGE, AUDIO, PDF)
+   =================================================== */
+.col-foto-cell {
+    width: 70px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-media-preview-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-avatar-img {
+    width: 42px !important;
+    height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+    border-radius: 8px;
+    object-fit: cover !important;
+    border: 1px solid #e1e3ed;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.table-avatar-img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.media-placeholder-badge {
+    display: inline-block;
+    color: #a4a8bd;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.table-audio-player audio {
+    height: 32px;
+    max-width: 170px;
+    outline: none;
+}
+
+.btn-view-doc {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    min-height: unset !important;
+    gap: 5px !important;
+}
+
+.media-upload-section {
+    grid-column: 1 / -1;
+    background: #fafaff;
+    border: 1px dashed #d7d5f4;
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 8px 0 16px;
+}
+
+.media-upload-heading {
+    margin: 0 0 16px;
+    font-size: 14px;
+    font-weight: 750;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.media-upload-row {
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #edeef7;
+}
+
+.media-upload-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.preview-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #60667c;
+    margin-bottom: 6px;
+}
+
+.preview-img-tag {
+    max-width: 130px;
+    max-height: 130px;
+    border-radius: 8px;
+    border: 2px solid #e1dffa;
+    object-fit: cover;
+    display: block;
+}
+
+.preview-audio-tag {
+    width: 100%;
+    max-width: 320px;
+    height: 36px;
+}
+
+.pdf-preview-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: #ffffff;
+    border: 1px solid #e1e3ee;
+    border-radius: 8px;
+    width: fit-content;
+    font-size: 12px;
+    color: #3b4054;
+}
+
+.media-current-and-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.current-media-box {
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid #e5e6f0;
+    border-radius: 8px;
+}
+
+.field-error {
+    display: block;
+    color: #e0314f;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 4px;
+}
